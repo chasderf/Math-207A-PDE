@@ -1,0 +1,113 @@
+\documentclass{article}
+\usepackage{amsmath}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\begin{document}
+
+
+\title {Math 207A Ordinary Differential Equations: Ch.4 Stability Properties}
+
+\author{Charlie Seager}
+
+\maketitle
+
+\textbf {Chapter 4: Stability of Linear and Almost Linear Systems}
+
+\textbf {Chapter 4.2 Defiitions of Stability}
+
+\textbf {Definition 1} (See Figure 4.2) The equilibrium solution $y_0$ of (4.1) is said to be stable if for each number $\epsilon > 0$ we can find a number $\delta > 0$ (depending on $\epsilon$) such that if $\Psi(t)$ is any solution of (4.1) having $||\Psi(t_0) - y_0|| < \delta$, then the solution $\Psi(t)$ exists for all $t \geq t_0$ and $||\Psi(t) - y_0||< \epsilon$ for $t \geq t_0$ (where for convenience the norm is the Euclidean distance that makes neighborhoods spherical).
+
+\textbf {Definition 2} (See Figure 4.3) The equilibrium solution $y_0$ is said to be asymptotically stable if it is stable and if there exists a number $\delta_0 > 0$ such that if $\Psi(t)$ is any solution of (4.1) having $||\Psi(t_0) - y_0||< \delta_0$, then $\lim_{t \to + \infty} \Psi(t) = y_0$.
+
+\textbf {Definition 3} A solution $\Phi(t)$ of (4.2) is said to be stable for every $\epsilon > 0$ and every $t_0 \geq 0$ there exists a $\delta > 0$ ($\delta$ now depends on both $\epsilon$ and possibly $t_0$) such that whenever $|\Phi(t_0)-y_0| < \delta$ the solution $\Psi(t, t_0, y_0)$ exists for $t > t_0$ and satisfies $|\Phi(t) - \Psi(t, t_0, y_0)| < \epsilon$ for $t \geq t_0$.
+
+\textbf {Definition 4} The solution $\Phi(t)$ of (4.2) is said to be asymptotically stable if it stable and if there exists $\delta_0 > 0$ such that whenever $|\Phi(t_0) - y_0| < \delta_0$ the solution $\Psi(t, t_0, y_0)$ approaches the solution $\Phi(t)$ as $t \to \infty$ (that is, $\lim_{t \to \infty} | \Psi(t, t_0, y_0) - \Phi(t)| = 0)$
+
+\textbf {Chapter 4.3 Linear Systems}
+
+\textbf {Theorem 4.1} If all eigenvalues of A have nonpositive real parts and all those eigenvalues with zero real parts are simple, then the solution y = 0 of (4.3) is stable. If (and only if) all eigenvalues of A have negative real parts, the zero solution of (4.3) is asymptotically stable. In fact in this case, $\Psi(t, t_0)$ denotes the fundamental matrix of (4.3) which is the identity at $t = t_0$ $\Psi(t, t_0) = exp ((t-t_0)A)$ and there exist constants $K > 0$ $\sigma > 0$ such that
+\begin{center}
+$| \Psi(t, t_0)| \leq K exp (-\sigma(t-t_0)) \tab (t_0 \leq t < \infty)$
+\end{center}
+with $\sigma > 0$ in the case that all eigenvalues of A have negative real parts and $\sigma = 0$ if there are simple eigenvalues with zero real part. If one or more eigenvalues of A have a positive real part, the zero solution of (4.3) is unstable.
+
+\textbf {Theorem 4.2} Let all the eigenvalues of A have real parts negative and let B(t) be continuous for $0 \leq t < \infty$ with $\lim_{t \to \infty} B(t) = 0$. Then the zero solution of (4.5) is globally asymptotically stable
+
+\textbf {Chapter 4.4 Almost linear system}
+
+\textbf {Theorem 4.3} Suppose all eigenvalues of A have negative real parts, f(t,y) and $( \partial f / \partial y_j)$ (t,y) (j=1,...,n) are continuous in (t,y) for $0 \leq t < \infty, |y| < k$ where $k > 0$ is a constant, and f is small in the sense that
+\begin{center}
+$\lim_{|y| \to 0} \frac{|f(t,y)|}{|y|} = 0$
+\end{center}
+uniformly with respecct to t on $0 \leq t < \infty$. Then the solution y = 0 of (4.16) is asymptotically stable.
+
+\textbf {Theorem 4.4} If A and f satisfy the hypothesis of Theorem 4.3 and if B(t) is continuous for $0 \leq t < \infty$ with $\lim_{t \to \infty} B(t) = 0$, then the zero solution of (4.22) is asymptotically stable.
+
+\textbf {Theorem 4.5} In equation (4.23) assume
+\begin{center}
+(i) the eigenvalues of A all have negative real part; \\
+(ii) $\lim_{|y| \to 0} |f(t,y)|/|y| = 0$ uniformly in t on $0 \leq t < \infty$; \\
+(iii) $|h(t,y)| \leq \lambda(t)$ for $0 \leq t < \infty$, $|y| < k$ for some $k > 0$, where $\lambda$ is a continuous nonnegative function on $0 \leq t < \infty$ such that $\land(t) = \int_t^{t+1} \lambda(s) ds \to 0$ as $t \to \infty$
+\end{center}
+Then there exists $T_0 > 0$ such that every solution $\phi$ of (4.23) with $|\phi(T)|$ small enough for any $T \geq T_0$ remains small for $t \geq T$, and $\lim_{t \to \infty} \phi(t) = 0$.
+
+\textbf {Lemma 4.1} If $\lambda$ satisfies (iii) and if $\omega > 0$, then there exists $T_0$ such that
+\begin{center}
+$\lim_{t \to \infty} \int_T^t e^{-\omega(t-s)} \lambda(s) ds= 0$
+\end{center}
+for all $T \geq T_0$
+
+\textbf {Chapter 4.5 Conditional Stability}
+
+\textbf {Theorem 4.6} Let g, $\partial g / \partial y_j$ (j = 1,2) be continuous for $|y| < k$ for some constant $k > 0$ (k can be small), and let g(0) = 0 and $\lim_{|y| \to 0} |\partial g / \partial y_j|$ = 0(j=1,2). If the eigenvalues of A are $\lambda , - \mu,$ with $\lambda , \mu > 0$, then there exists in y space a real curve C passing through the origin such that if $\phi$ is any solution of (4.30) with $\phi(0)$ (or $\phi(t_0))$ on C and $|\phi(0)|$ small enough, then $\phi(t) \to 0$ as $t \to \infty$. Moreover, no solution $\phi(t)$ with $|\phi(0)|$ small enough, but not on C, can remain small for $t \geq 0$; in particular, the zero solution of (4.30) is unstable.
+
+\textbf {Chapter 4.6 Asymptotic Equivalence}
+
+\textbf {Definition} We say that the systems (4.44) and (4.45) are asymptotically equivalent if to each solution x(t) of (4.44) with $|x(t_0)|$ sufficiently small there corresponds a solution y(t) of (4.45) such that
+\begin{center}
+$\lim_{t \to \infty} |y(t) - x(t)| = 0$
+\end{center}
+and if to each solution $\hat{y}(t)$ of (4.45) with $|\hat{y}(t_0)|$ sufficiently small there corresponds a solution $\hat{x}(t)$ of (4.44) such that
+\begin{center}
+$\lim_{t \to \infty} |\hat{y}(t)-\hat{x}(t)| = 0$
+\end{center}
+
+\textbf {Theorem 4.7} Let A be a constant matrix such that all solutions of
+\begin{center}
+x'=Ax
+\end{center}
+are bounded on $0 \leq t < \infty$. Let B(t) be a continuous matrix such that
+\begin{center}
+$\int_0^\infty |B(s)|ds < \infty$
+\end{center}
+Then (4.48) and the system
+\begin{center}
+y'=(A+B(t))y
+\end{center}
+are asymptotically equivalent.
+
+\textbf {Theorem 4.8} Let A be a real constant matrix satisfying the hypotheses of Theorem 4.7. Let g, $\partial g / \partial y_j$ (j =1,...,n) be continous for $0 \leq t < \infty$, $|y| < \infty$ for some $k > 0$ suppose
+\begin{center}
+$|g(t,y)| \leq \lambda(t) |y|$
+\end{center}
+for $0 \leq t < \infty, |y| < k$ where $\int_0^\infty \lambda(t) dt< \infty$ . Then (4.48) and (4.54) are asymptotically equivalent.
+
+\textbf {Chapter 4.7 Stability of Periodic Solutions}
+
+\textbf {Theorem 4.9} Let g and $\partial g/ \partial z_j$ (j=1,...,n) be periodic in t of period $\omega$ and continuous in (t,z) for $|z| < k_1$ $(k_1 > 0$ a constant). Let (4.58) be satisfied. Let A(t) be a continuous n-by-n periodic matrix of period $\omega$ in t. Let the multipliers $\lambda_1, \lambda_2, ...,\lambda_n$ (counting multiplicities) of the linear system x'=A(t)x have magnitude $|\lambda_k| < 1$ (k = 1,...,n). Then the zero solution of (4.59) is asymptotically stable.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

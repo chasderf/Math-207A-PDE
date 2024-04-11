@@ -1,0 +1,92 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage[mathscr]{euscript}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\begin{document}
+
+
+\title {Math 207A Ordinary Differential Equations: Ch.6 Some Applications}
+
+\author{Charlie Seager}
+
+\maketitle
+
+\textbf {Chapter 6.2 The Undamped Oscillator}
+
+\textbf {Theorem 6.1} Let (6.2) and (6.6) be satisfied. Then there exists a neighborhood N of the origin in the phase plane such that if $(\mathscr{n}_1, \mathscr{n}_2)$ is in N, then the solution of (6.3) through $(\mathscr{n}_1, \mathscr{n}_2)$ is periodic. Let $T(A) > 0$ be the least period of all periodic solutions that generate the solution curve through the point (A, 0) in N, with $A > 0$ and sufficiently small. Then
+\begin{center}
+$T(A) = 2 \sqrt{2} \int_0^A \frac{d \sigma}{[G(A) - G(\sigma)]^{1/2}}$
+\end{center}
+where $G(u) = \int_0^u g(\sigma) d\sigma$. Moreover,
+\begin{center}
+$T(A) = \frac{2 \sqrt{2}}{[G(A)]^{1/2}} - \sqrt{2} \int_0^A \frac{[g(A)-g(\sigma)]}{[G(A) - G(\sigma)]^{3/2}} d \sigma$
+\end{center}
+
+\textbf {Corollary 1} If the hypotheses of Theorem 6.1 are satisfied and if in addition g(x) is monotone increasing in some neighborhood of x = 0 [for example, if $g'(0)>0$], then we also have
+\begin{center}
+$T'(A) = - \frac{2 \sqrt{2}g(A)}{G(A)} \int_0^A [\frac{G(\sigma)g'(\sigma)}{[g(\sigma)]^2} - \frac{1}{2}] \frac{d \sigma}{[G(A) - G(\sigma)]^{1/2}}$
+\end{center}
+
+\textbf {Corollary 2} Let the hypothesis of Corollary 1 be satisfied and assume in addition that g"(x) is continuous. If $g"(x) \geq 0$ on $0 \leq x \leq A$ and if g"(x) is not identically equal to zero, then $T'(A) < 0$. If $g"(x) \leq 0$ on $0 \leq x \leq A$ and if g"(x) is not identically zero, then $T'(A) > 0$.
+
+\textbf {Chapter 6.3 The Pendulum}
+
+\textbf {Chapter 6.4 Self-Excited Oscillations-Periodic Solutions of the Lienard Equation}
+
+\textbf {Theorem 6.2} Suppose \\
+(i) $ug(u) > 0$ \tab $(u \neq 0)$ \\
+(ii) $\lim_{|u| \to \infty} |F(u)| = + \infty$ \\
+and that for some $a, b > 0$ \\
+(iii) $F(u) < 0$ \tab $(u < -a, 0<u<b)$ \\
+\tab $F(u) > 0$ \tab $(-a < u < 0, u > b)$ \\
+Then (6.23) has a nontrivial periodic solution.
+
+\textbf {Theorem 6.3} Suppose \\
+(i) $ug(u) > 0 \tab (u \neq 0)$ \\
+(ii) $g(u) = -g(-u) \tab f(u) = f(-u)$ \\
+and that for some $b > 0$ \\
+(iii) $F(u) < 0, \tab (0 < u < b)$ \\
+\tab $F(u) > 0, \tab (u > b)$ \\
+(iv) F(u) is monotone increasing for $u > b$ and $\lim_{u \to \infty} F(u) = \infty$ \\
+Then the equation \\
+\tab $u" + f(u)u' + g(u) = 0$ \\
+has a unique nontrivial periodic solution p(t)
+
+\textbf {Chapter 6.5 The Regulator Problem}
+
+\textbf {Definition} The real symmetric n-by-n matrix B is said to be positive definite if and only if the quadratic form $y^TBy$ is positive definite.
+
+\textbf {Sylvester's Theorem}
+
+\textbf {Lyapunov's Theorem on Matrices} Let A be a given constant stable matrix and let C be a given symmetric positive definite matrix. Then there exists a symmetric positive definite matrix B such that \\
+\tab $A^T B + BA = -C$
+
+\textbf {Corollary} If $p > d^T C^{-1}d$ then $p \neq c^T A^{-1}B$
+
+\textbf {Chapter 6.6 Absolute Stability of the Regulator System}
+
+\textbf {Theorem 6.4} Let A be a given stability matrix. Let C be any positive definite symmetric matrix and define B to be the positive definite symmetric matrix such that \\
+\tab $A^T B + BA = -C$ \\
+Define $d = Bb - \frac{1}{2}c$. Then if $p \neq c^T A^{-1}b$ and if $p > d^T C^{-1}d$, the system (6.33), is absolutely stable for all admissible characteristic functions. (If the system (6.37) is studied independent of the original system (6.33), the condition $p \neq c^T A^{-1}b$ is not needed).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

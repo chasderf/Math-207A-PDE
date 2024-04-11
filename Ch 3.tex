@@ -1,0 +1,106 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{mathrsfs}
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+\begin{document}
+
+
+\title {Math 207A Ordinary Differential Equations: Ch.3 Existence Theory}
+
+\author{Charlie Seager}
+
+\maketitle
+
+\textbf {Chapter 3.1 Existence in the Scalar Case}
+
+\textbf {Lemma 3.1} If $\phi$ is a solution of the initial value problem (3.1), (3.2) on an interval I, then $\phi$ satisfies (3.3) on I. Conversely, if y(t) is a solution of (3.3) on some interval J containing $t_0$, then y(t) satisfies (3.1) on J and also the initial condition (3.2)
+
+\textbf {Definition} A function f that satisfies an inequality of the form (3.7) for all $(t, y_1), (t, y_2)$ in a region D is said to satisfy a Lipschitz condition in D.
+
+\textbf {Lemma 3.2} Define $\alpha$ to be the smaller of the positive numbers a and b/M. Then the successive approximations $\phi_j$ given by (3.8) are defined on the interval $I = \{t | t-t_0| \leq \alpha \}$ and on this interval
+\begin{center}
+$|\phi_j(t) - y_0| \leq M |t - t_0| \leq b,$ \tab (j=0,1,2,...)
+\end{center}
+
+\textbf {Theorem 3.1} Suppose f and $\partial f / \partial y$ are continuous on the closed rectangle R and satisfy the bounds (3.6). Then the successive approximation $\phi_j$ given by (3.8), converge (uniformly) on the interval $I = \{t | t-t_0| \leq \alpha \}$ to a solution $\phi$ of the differential equation (3.1) that satisfies the initial conditions (3.2)
+
+\textbf {Theorem 3.2} Suppose f is continuous on the rectangle R, and suppose $|f(t,y)| \leq M$ for all points (t,y) in R. Let $\alpha$ be the smaller of the positive numbers a and b/M. Then there is a solution $\phi$ of the differential equation (3.1) that satisfies the initial condition (3.2) existing on the interval $|t-t_0| < \alpha$
+
+\textbf {Chapter 3.2 Existence Theory for Systems of First-Order Equations}
+
+\textbf {Theorem 3.3} Let f and $\partial f / \partial y_j$ (j = 1,...,n) be 
+continuous on the box $B = \{ (t,y) | |t-t_0| \leq a, |y-\mathcal{n}| \leq b \}$,
+where a and b are positive numbers, and satisfying the bounds
+\begin{center}
+$|f(t,y)| \leq M, |\frac{\partial f(t,y)}{\partial y_j} | \leq K$ \tab (j = 1,...,n)
+\end{center}
+for (t,y) in B. Let $\alpha$ be the smaller of the numbers a and b/M and define
+the successive approximations
+\begin{center}
+$ \{ \Phi_0(t) = \mathscr{n}$
+\end{center}
+\begin{center}
+$ \{ \Phi_n(t) = \mathscr{n} + \int_{t_0}^t f(s, \Phi_{n-1} (s)) ds$
+\end{center}
+Then the sequence $\{ \Phi_j \}$ of successive approximations converges 
+(uniformly) on the interval $|t-t_0| \leq \alpha$ to a solution $\Phi(t)$ of (3.16), 
+that satisfies the initial condition $\Phi(t_0) = \mathscr{n}$
+
+\textbf {Chapter 3.3 Uniqueness of Solutions}
+
+\textbf {Theorem 3.4} Suppose t and $\partial f / \partial y_j$ (j = 1,..,n) are continuous on the "box"
+\begin{center}
+$B = \{(t,y) | |t-t_0| \leq a, |y-\mathscr{n}| \leq b \}$
+\end{center}
+Then there exists at most one solution of (3.22) satisfying the initial condition (3.23)
+
+\textbf {Theorem 3.5} Suppose f is continuous on the rectangle R = \{(t,y) | $ |t-t_0| \leq a, |y-y_0| \leq b \}$ and monotone nonincreasing in y for each fixed t on the rectangle R. Then the initial value problem
+\begin{center}
+y' = f(t,y)
+\end{center}
+\begin{center}
+$\phi(t_0) = y_0$
+\end{center}
+has at most one solution on any interval J with $t_0$ as left end point.
+
+\textbf {Chapter 3.4 Continuation of Solutions}
+
+\textbf {Lemma 3.3} Suppose f, $\partial f / \partial y_j$ (j = 1,..,n) are continuous in a domain D and suppose $|f|$ is bounded in D. Let $\Phi$ be a solution
+\begin{center}
+y' = f(t,y)
+\end{center}
+\begin{center}
+$\phi(t_0) = \mathscr{n}$
+\end{center}
+existing on a finite interval $y < t < \delta$. Then $\lim_{t \to \delta^-} \phi(t)$ and $\lim_{t \to y^+} \phi(t)$ exist.
+
+\textbf {Theorem 3.6} Suppose that f and $\partial f / \partial y_j$ (j = 1,...,n) are continuous in a given region D and suppose f is bounded on D. Let $(t_0, \mathscr{n})$ be a given point of D. Then the unique solution $\phi$ of the system y'=f(t,y) passing through the point $(t_0, \mathscr{n})$ can be extended until its graph meets the boundary of D.
+
+\textbf {Chapter 3.5 Dependence on Initial Conditions and Parameters}
+
+\textbf {Theorem 3.7} Suppose f and $\partial f / \partial y_j$ (j = 1,...,n) are continuous and bounded in a given region D. We assume that the bounds (3.19) are satisfied on D (rather than on the box B). Let $\Phi$ be the solution of the system (3.27) passing through the point $(t_0, \mathscr{n})$ and let $\Psi$ be the solution of (3.27) passing through the point $(\hat{t}_0, \hat{\mathscr{n}})$. Suppose that $\Phi$ and $\Psi$ both exist on some interval $\alpha < t < \beta$. Then to each $\epsilon > 0$ there corresponds $\delta > 0$ such that if $| t - \hat{t}| < \delta $ and $| \mathscr{n} - \hat{\mathscr{n}}| < \delta$, then
+\begin{center}
+$| \Phi(t) - \Psi(\hat{t})| < \epsilon \tab (\alpha < t < \beta, \tab \alpha < \hat{t} < \beta)$
+\end{center}
+
+\textbf {Theorem 3.8} Let f, g be defined in a domain D and satisfy the hypotheses of Theorem 3.7. Let $\Phi$ and $\Psi$ be solutions of y' = f(t,y), y' = g(t,y) respectively such that $\Phi(t_0) = \mathscr{n}, \Psi(t_0) = \hat{\mathscr{n}}$, existing on a common interval $\alpha < t < \beta$ suppose 
+\begin{center} 
+$|f(t,y) - g(t,y)| \leq \epsilon$
+\end{center}
+for (t,y) in D. Then the solutions $\Phi, \Psi$ satisfy the estimate
+\begin{center}
+$|\Phi(t) - \Psi(t)| \leq | \mathscr{n} - \hat{\mathscr{n}}| exp(K|t-t_0|) + \epsilon(\beta - \alpha) exp (K|t-t_0|)$
+\end{center}
+for all t in $\alpha < t < \beta$
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
